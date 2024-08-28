@@ -4,7 +4,6 @@ import bkashImage from "../../assets/others/bkash.png"; // Replace with your act
 import masterCardImage from "../../assets/others/mastercard.png"; // Replace with your actual image path
 import nogodImage from "../../assets/others/nogod.png"; // Replace with your actual image path
 import payIcon from "../../assets/others/pay-with.png"; // Replace with your actual image path
-import visaImage from "../../assets/others/visa.png"; // Replace with your actual image path
 
 const LowerFooter = () => {
   return (
@@ -20,7 +19,6 @@ const LowerFooter = () => {
             <img src={nogodImage} alt="Nogod" className="h-8" />
             <img src={bkashImage} alt="Bkash" className="h-8" />
             <img src={masterCardImage} alt="MasterCard" className="h-8" />
-            <img src={visaImage} alt="Visa" className="h-8" />
           </div>
         </div>
       </div>
