@@ -15,9 +15,6 @@ const FooterSocial = () => {
         <a href="#" className="text-gray-300 hover:text-white">
           <i className="fab fa-instagram"></i>
         </a>
-        <a href="#" className="text-gray-300 hover:text-white">
-          <i className="fab fa-twitter"></i>
-        </a>
       </div>
     </div>
   );
