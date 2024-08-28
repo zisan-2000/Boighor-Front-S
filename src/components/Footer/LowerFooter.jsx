@@ -9,17 +9,19 @@ import visaImage from "../../assets/others/visa.png"; // Replace with your actua
 const LowerFooter = () => {
   return (
     <div className="mt-12 border-t border-gray-700 pt-6">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <div className="text-sm text-gray-300">
+      <div className="mx-auto flex max-w-7xl flex-col justify-between px-6 lg:flex-row lg:items-center">
+        <div className="mb-4 text-center text-sm text-gray-300 lg:mb-0 lg:text-left">
           <p>&copy; 2024 YourCompanyName</p>
         </div>
-        <div className="flex items-center space-x-4">
-          <span className="mr-2 text-gray-300">Accepted Payments</span>
-          <img src={payIcon} alt="Pay Icon" className="h-8" />
-          <img src={nogodImage} alt="Nogod" className="h-8" />
-          <img src={bkashImage} alt="Bkash" className="h-8" />
-          <img src={masterCardImage} alt="MasterCard" className="h-8" />
-          <img src={visaImage} alt="Visa" className="h-8" />
+        <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 lg:justify-end">
+          <span className="mr-0 text-gray-300 sm:mr-2">Accepted Payments</span>
+          <div className="flex space-x-4">
+            <img src={payIcon} alt="Pay Icon" className="h-8" />
+            <img src={nogodImage} alt="Nogod" className="h-8" />
+            <img src={bkashImage} alt="Bkash" className="h-8" />
+            <img src={masterCardImage} alt="MasterCard" className="h-8" />
+            <img src={visaImage} alt="Visa" className="h-8" />
+          </div>
         </div>
       </div>
     </div>
