@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Categories from "./components/Categories/Categories";
+import CategoryList from "./components/Categories/CategoryList";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import ProductDetail from "./components/Products/ProductDetail"; // Import the new component
@@ -14,7 +15,6 @@ import CategoriesPage from "./pages/CategoriesPage";
 import CategoryProductsPage from "./pages/CategoryProductsPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ContactPage from "./pages/ContactPage";
-import DaoraHadis from "./pages/DaoraHadis";
 import Home from "./pages/Home";
 import IslamicPonno from "./pages/IslamicPonno";
 import OrderConfirmation from "./pages/OrderConfirmation/OrderConfirmation";
@@ -40,7 +40,7 @@ const App = () => {
             {/* Add the route */}
             <Route path="/authors" element={<AuthorsPage />} />
             <Route path="/publishers" element={<PublishersPage />} />
-            <Route path="/path1" element={<DaoraHadis />} />
+            <Route path="/path1" element={<BookFair />} />
             <Route path="/book-fair" element={<BookFair />} />
             <Route path="/pre-order" element={<PreOrder />} />
             <Route path="/islamic-products" element={<IslamicPonno />} />
@@ -50,6 +50,7 @@ const App = () => {
             <Route path="/order-confirmation" element={<OrderConfirmation />} />
             <Route path="/blogList" element={<BlogListPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
+            <Route path="/allbooks" element={<CategoryList />} />
           </Routes>
         </main>
         <Footer />

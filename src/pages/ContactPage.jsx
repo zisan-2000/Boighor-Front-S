@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 
 const ContactForm = () => {
@@ -15,13 +14,10 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/contacts/",
-        formData,
-      );
+    // Simulate a successful form submission
+    setTimeout(() => {
       setStatus("Message sent successfully!");
       setFormData({
         name: "",
@@ -29,13 +25,11 @@ const ContactForm = () => {
         phone_number: "",
         message: "",
       });
-    } catch (error) {
-      setStatus("Failed to send message.");
-    }
+    }, 1000);
   };
 
   return (
-    <div className="mx-auto max-w-md rounded-lg border border-gray-300 p-4 shadow-md">
+    <div className="m-8 mx-auto max-w-md rounded-lg border border-gray-300 p-16 shadow-md dark:bg-slate-200">
       <h1 className="mb-4 text-2xl font-bold">Contact Us</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>

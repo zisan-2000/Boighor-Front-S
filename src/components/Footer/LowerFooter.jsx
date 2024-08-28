@@ -1,10 +1,10 @@
 // LowerFooter.jsx
 import React from "react";
-import bkashImage from "../../assets/bkash.png"; // Replace with your actual image path
-import masterCardImage from "../../assets/mastercard.png"; // Replace with your actual image path
-import nogodImage from "../../assets/nogod.png"; // Replace with your actual image path
-import payIcon from "../../assets/pay-with.png"; // Replace with your actual image path
-import visaImage from "../../assets/visa.png"; // Replace with your actual image path
+import bkashImage from "../../assets/others/bkash.png"; // Replace with your actual image path
+import masterCardImage from "../../assets/others/mastercard.png"; // Replace with your actual image path
+import nogodImage from "../../assets/others/nogod.png"; // Replace with your actual image path
+import payIcon from "../../assets/others/pay-with.png"; // Replace with your actual image path
+import visaImage from "../../assets/others/visa.png"; // Replace with your actual image path
 
 const LowerFooter = () => {
   return (

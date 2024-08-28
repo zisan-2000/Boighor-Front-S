@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { writers } from "../DummyData/DummyData"; // Importing dummy data
 
 const AuthorFilter = () => {
-  const [authors, setAuthors] = useState([]);
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/writers/")
-      .then((response) => response.json())
-      .then((data) => setAuthors(data))
-      .catch((error) => console.error("Error fetching authors:", error));
-  }, []);
+  const authors = writers; // Using static data
 
   return (
     <div>
@@ -25,7 +19,7 @@ const AuthorFilter = () => {
             </label>
           ))
         ) : (
-          <p>Loading authors...</p>
+          <p>No authors available.</p>
         )}
       </div>
     </div>

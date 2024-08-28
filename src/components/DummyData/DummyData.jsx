@@ -6,6 +6,8 @@ import hindu3 from "../../assets/HilfulFuzul/hindu/13.jpg";
 import hindu2 from "../../assets/HilfulFuzul/hindu/4.jpg";
 import hindu4 from "../../assets/HilfulFuzul/hindu/40.jpg";
 
+import hinduPdf1 from "../../assets/HilfulFuzul/hindu/আলোর পথে ( সিরিজ ১-৩).pdf";
+
 // khistian
 import khristan1 from "../../assets/HilfulFuzul/chistian/2.jpg";
 import khristan2 from "../../assets/HilfulFuzul/chistian/22.jpg";
@@ -52,18 +54,23 @@ import maolana2 from "../../assets/HilfulFuzul/maolana/8.jpg";
 //ritiniti
 import ritiniti1 from "../../assets/HilfulFuzul/ritiniti/16.jpg";
 
+//WriterImage
+import writer1 from "../../assets/others/man.jpg";
+
+//PublisherImage
+import Publisher1 from "../../assets/others/ogrogoti.jpg";
+
+//blogs
+import blog1 from "../../assets/others/blog1.jpg";
+import blog2 from "../../assets/others/blog2.jpg";
+import blog3 from "../../assets/others/blog3.jpg";
+
 export const writers = [
   {
     id: 1,
     name: "যুবায়ের আহমদ",
     books_count: 5,
-    image: "../../assets/man.jpg",
-  },
-  {
-    id: 2,
-    name: "যুবায়ের আহমদ",
-    books_count: 3,
-    image: "../../assets/man.jpg",
+    image: writer1,
   },
 ];
 
@@ -72,13 +79,7 @@ export const publishers = [
     id: 1,
     name: "হিলফুল ফুজুল",
     books_count: 10,
-    image: "../../assets/ogrogoti.jpg",
-  },
-  {
-    id: 1,
-    name: "হিলফুল ফুজুল",
-    books_count: 5,
-    image: "../../assets/ogrogoti.jpg",
+    image: Publisher1,
   },
 ];
 
@@ -129,7 +130,7 @@ export const products = [
     stock: 50,
     available: true,
     image: hindu1,
-    pdf: "../../assets/HilfulFuzul/hindu/আলোর পথে ( সিরিজ ১-৩).pdf",
+    pdf: hinduPdf1,
   },
   {
     id: 2,
@@ -144,7 +145,7 @@ export const products = [
     stock: 50,
     available: true,
     image: hindu2,
-    pdf: "../../assets/HilfulFuzul/hindu/আলোর পথে ( সিরিজ ১-৩).pdf",
+    pdf: hinduPdf1,
   },
   {
     id: 3,
@@ -159,7 +160,7 @@ export const products = [
     stock: 50,
     available: true,
     image: hindu3,
-    pdf: "../../assets/HilfulFuzul/hindu/আলোর পথে ( সিরিজ ১-৩).pdf",
+    pdf: hinduPdf1,
   },
   {
     id: 4,
@@ -174,7 +175,7 @@ export const products = [
     stock: 50,
     available: true,
     image: hindu4,
-    pdf: "../../assets/HilfulFuzul/hindu/আলোর পথে ( সিরিজ ১-৩).pdf",
+    pdf: hinduPdf1,
   },
 
   //khristian
@@ -192,7 +193,7 @@ export const products = [
     stock: 30,
     available: true,
     image: khristan1,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   {
@@ -208,7 +209,7 @@ export const products = [
     stock: 30,
     available: true,
     image: khristan2,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   {
@@ -224,7 +225,7 @@ export const products = [
     stock: 30,
     available: true,
     image: khristan3,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 8,
@@ -239,7 +240,7 @@ export const products = [
     stock: 30,
     available: true,
     image: khristan4,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 9,
@@ -254,7 +255,7 @@ export const products = [
     stock: 30,
     available: true,
     image: khristan5,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 10,
@@ -269,7 +270,7 @@ export const products = [
     stock: 30,
     available: true,
     image: khristan6,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 11,
@@ -284,7 +285,7 @@ export const products = [
     stock: 30,
     available: true,
     image: khristan7,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 12,
@@ -299,7 +300,7 @@ export const products = [
     stock: 30,
     available: true,
     image: khristan8,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   //attojiboni
@@ -316,7 +317,7 @@ export const products = [
     stock: 30,
     available: true,
     image: attojiboni1,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 14,
@@ -331,7 +332,7 @@ export const products = [
     stock: 30,
     available: true,
     image: attojiboni2,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   //daoat o dayi
@@ -349,7 +350,7 @@ export const products = [
     stock: 30,
     available: true,
     image: daoat1,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   {
@@ -365,7 +366,7 @@ export const products = [
     stock: 30,
     available: true,
     image: daoat2,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   {
@@ -381,7 +382,7 @@ export const products = [
     stock: 30,
     available: true,
     image: daoat3,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   {
@@ -397,7 +398,7 @@ export const products = [
     stock: 30,
     available: true,
     image: daoat4,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   {
@@ -413,7 +414,7 @@ export const products = [
     stock: 30,
     available: true,
     image: daoat5,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   {
@@ -429,7 +430,7 @@ export const products = [
     stock: 30,
     available: true,
     image: daoat6,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   {
@@ -445,7 +446,7 @@ export const products = [
     stock: 30,
     available: true,
     image: daoat7,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   {
@@ -461,7 +462,7 @@ export const products = [
     stock: 30,
     available: true,
     image: daoat8,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   // islam and hedayet
@@ -478,7 +479,7 @@ export const products = [
     stock: 30,
     available: true,
     image: islam1,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 24,
@@ -493,7 +494,7 @@ export const products = [
     stock: 30,
     available: true,
     image: islam2,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 25,
@@ -508,7 +509,7 @@ export const products = [
     stock: 30,
     available: true,
     image: islam3,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 26,
@@ -523,7 +524,7 @@ export const products = [
     stock: 30,
     available: true,
     image: islam4,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 27,
@@ -538,7 +539,7 @@ export const products = [
     stock: 30,
     available: true,
     image: islam5,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 28,
@@ -553,7 +554,7 @@ export const products = [
     stock: 30,
     available: true,
     image: islam6,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 29,
@@ -568,7 +569,7 @@ export const products = [
     stock: 30,
     available: true,
     image: islam7,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 30,
@@ -583,7 +584,7 @@ export const products = [
     stock: 30,
     available: true,
     image: islam8,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 31,
@@ -598,7 +599,7 @@ export const products = [
     stock: 30,
     available: true,
     image: islam9,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   //maolana
@@ -616,7 +617,7 @@ export const products = [
     stock: 30,
     available: true,
     image: maolana1,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 33,
@@ -631,7 +632,7 @@ export const products = [
     stock: 30,
     available: true,
     image: maolana2,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 34,
@@ -646,7 +647,7 @@ export const products = [
     stock: 30,
     available: true,
     image: maolana3,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 35,
@@ -661,7 +662,7 @@ export const products = [
     stock: 30,
     available: true,
     image: maolana4,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 36,
@@ -676,7 +677,7 @@ export const products = [
     stock: 30,
     available: true,
     image: maolana5,
-    pdf: "",
+    pdf: hinduPdf1,
   },
   {
     id: 37,
@@ -691,7 +692,7 @@ export const products = [
     stock: 30,
     available: true,
     image: maolana6,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 
   // ritiniti
@@ -708,7 +709,7 @@ export const products = [
     stock: 30,
     available: true,
     image: ritiniti1,
-    pdf: "",
+    pdf: hinduPdf1,
   },
 ];
 
@@ -751,19 +752,28 @@ export const orderItems = [
 export const blogs = [
   {
     id: 1,
-    title: "Introduction to React",
-    summary: "This blog introduces you to the basics of React.",
-    date: "2024-08-27",
-    author: "Jane Developer",
-    image: "/path/to/blog_images/react_intro.jpg",
+    title: "কুরআন বোঝার উপায়",
+    summary: "কুরআনের গুরুত্ব এবং এর ব্যাখ্যা সম্পর্কে একটি পরিচিতি।",
+    date: "2024",
+    author: "উস্তাদ আহমদ",
+    image: blog1,
   },
   {
     id: 2,
-    title: "Advanced Django",
-    summary: "Deep dive into advanced Django topics.",
-    date: "2024-08-28",
-    author: "John Coder",
-    image: "/path/to/blog_images/django_advanced.jpg",
+    title: "হযরত মুহাম্মদ (সা:) এর জীবনী",
+    summary: "হযরত মুহাম্মদ (সা:) এর জীবন এবং তার শিক্ষার গভীর পর্যালোচনা।",
+    date: "2024",
+    author: "শায়খ ইব্রাহিম",
+    image: blog2,
+  },
+  {
+    id: 3,
+    title: "ইসলামের পাঁচটি স্তম্ভ",
+    summary:
+      "ইসলামের পাঁচটি স্তম্ভ এবং মুসলিম জীবনে এগুলির গুরুত্ব নিয়ে আলোচনা।",
+    date: "2024",
+    author: "ড. ফাতিমা",
+    image: blog3,
   },
 ];
 

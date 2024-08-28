@@ -34,16 +34,16 @@ const AuthorCard = ({ author }) => {
             সকল বই
           </Button>
         </Link>
-        <Button className="buttonGray transition duration-300 hover:bg-gray-500">
+        {/* <Button className="buttonGray transition duration-300 hover:bg-gray-500">
           {author.books_count} টি বই
-        </Button>
+        </Button> */}
       </div>
       <div className="mt-4 text-center">
         <Link
           to={`/author/${author.id}/about`}
           className="text-blue-500 hover:underline"
         >
-          আরো জানুন
+          আরো জানুন (pending)
         </Link>
       </div>
     </div>

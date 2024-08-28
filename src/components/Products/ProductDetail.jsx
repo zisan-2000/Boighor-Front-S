@@ -1,18 +1,30 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaFilePdf } from "react-icons/fa"; // Importing PDF icon
 import { useParams } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
 import Button from "../Button/Button";
+import {
+  categories,
+  products,
+  publishers,
+  writers,
+} from "../DummyData/DummyData"; // Importing dummy data
 
 const ProductDetail = () => {
   const { addToCart } = useCart();
   const { productId } = useParams();
 
-  const [product, setProduct] = useState(null);
-  const [writer, setWriter] = useState(null);
-  const [publisher, setPublisher] = useState(null);
-  const [category, setCategory] = useState(null);
+  const [product] = useState(
+    products.find((p) => p.id === parseInt(productId)),
+  );
+
+  const [writer] = useState(writers.find((w) => w.id === product.writer.id));
+  const [publisher] = useState(
+    publishers.find((p) => p.id === product.publisher.id),
+  );
+  const [category] = useState(
+    categories.find((c) => c.id === product.category.id),
+  );
 
   const handleAddToCart = () => {
     addToCart(product);
@@ -26,31 +38,6 @@ const ProductDetail = () => {
     }
   };
 
-  useEffect(() => {
-    // Fetch product details
-    axios
-      .get(`http://127.0.0.1:8000/products/${productId}/`)
-      .then((response) => {
-        setProduct(response.data);
-        // Fetch writer details
-        axios
-          .get(`http://127.0.0.1:8000/writers/${response.data.writer}/`)
-          .then((writerResponse) => setWriter(writerResponse.data))
-          .catch((error) => console.error("Error fetching writer:", error));
-        // Fetch publisher details
-        axios
-          .get(`http://127.0.0.1:8000/publishers/${response.data.publisher}/`)
-          .then((publisherResponse) => setPublisher(publisherResponse.data))
-          .catch((error) => console.error("Error fetching publisher:", error));
-        // Fetch category details
-        axios
-          .get(`http://127.0.0.1:8000/categories/${response.data.category}/`)
-          .then((categoryResponse) => setCategory(categoryResponse.data))
-          .catch((error) => console.error("Error fetching category:", error));
-      })
-      .catch((error) => console.error("Error fetching product:", error));
-  }, [productId]);
-
   if (!product || !writer || !publisher || !category) {
     return <div>Loading...</div>;
   }
@@ -59,23 +46,23 @@ const ProductDetail = () => {
     <div className="bg-gray-100 py-4">
       <div className="mx-auto max-w-7xl p-4">
         <div className="rounded bg-white p-4 shadow">
-          <div className="flex flex-col gap-20 md:flex-row">
+          <div className="flex  flex-row gap-8 sm:flex-row sm:gap-8  md:flex-row md:gap-16 lg:gap-20 xl:gap-24">
             <img
               src={product.image}
               alt={product.name}
-              className="h-auto w-full cursor-pointer rounded border border-slate-950 object-cover md:w-1/3"
+              className="product-image w-2/5 cursor-pointer  rounded border border-slate-950 object-cover"
               onClick={handleImageClick}
               title="Please click to view the PDF"
             />
-            <div className="mt-4 md:ml-8 md:mt-0">
-              <h2 className="heading">{product.name}</h2>
-              <p className="mt-2">
+            <div className="product-details">
+              <h2 className="heading p-4">{product.name}</h2>
+              <p className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl">
                 <strong>লেখক:</strong> {writer.name}
               </p>
-              <p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl">
                 <strong>প্রকাশনী:</strong> {publisher.name}
               </p>
-              <p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl">
                 <strong>বিষয়:</strong> {category.name}
               </p>
               <p className="mt-4 text-xl text-red-500">
@@ -85,7 +72,7 @@ const ProductDetail = () => {
                 </span>{" "}
                 <span className="text-green-500">{product.discount}% ছাড়</span>
               </p>
-              <Button onClick={handleAddToCart} className="buttonRed mt-4">
+              <Button onClick={handleAddToCart} className="buttonRed">
                 এখনই কিনুন
               </Button>
 
@@ -106,30 +93,33 @@ const ProductDetail = () => {
             </div>
           </div>
           <div className="mt-8">
-            <h3 className="text-xl font-bold">বিস্তারিত</h3>
-            <p className="mt-2">{product.description}</p>
-            <div className="mt-4">
+            <h3 className="text-lg font-bold sm:text-xl md:text-2xl">
+              বিস্তারিত
+            </h3>
+            <p className="mt-2 text-sm sm:text-base md:text-lg">
+              {product.description}
+            </p>
+            <div className="mt-4 space-y-2 text-sm sm:text-base md:text-lg">
               <p>
                 <strong>প্রকাশনী:</strong> {publisher.name}
               </p>
               <p>
                 <strong>পৃষ্ঠা সংখ্যা:</strong> 160
-              </p>{" "}
+              </p>
               <p>
                 <strong>ভাষা:</strong> Bangla
-              </p>{" "}
+              </p>
               <p>
                 <strong>বাঁধাই:</strong> Hard cover
-              </p>{" "}
+              </p>
               <p>
                 <strong>ISBN:</strong> 9789845326168
-              </p>{" "}
+              </p>
               <p>
                 <strong>প্রথম প্রকাশ:</strong> 2024
-              </p>{" "}
+              </p>
             </div>
           </div>
-          {/* PDF Icon with click handler */}
         </div>
       </div>
     </div>

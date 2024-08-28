@@ -9,10 +9,10 @@ const CategoryList = () => {
 
   return (
     <div className="bg-slate-300 py-8">
-      <div className="mx-auto max-w-7xl p-4">
+      <div className="  mx-auto max-w-7xl p-4">
         {staticCategories.map((category) => (
           <div key={category.id} className="mb-12">
-            <h2 className="heading sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+            <h2 className="heading sm:text-2xl md:text-3xl lg:text-4xl xl:p-3 xl:text-5xl">
               {category.name}
             </h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">

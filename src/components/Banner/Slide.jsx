@@ -11,7 +11,7 @@ const Slide = ({ slide }) => {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80"></div>
       <div className="z-10 flex h-full flex-col items-center justify-center px-8 text-center text-white md:px-16">
-        <h1 className="mb-4 text-3xl font-extrabold leading-tight text-orange-500 drop-shadow-md md:text-7xl">
+        <h1 className="mb-4 text-4xl font-extrabold leading-tight text-orange-500 drop-shadow-md md:text-7xl">
           {slide.title}
         </h1>
         <p className="mb-6 text-2xl drop-shadow-md md:text-3xl">

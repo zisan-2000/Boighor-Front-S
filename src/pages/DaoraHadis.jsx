@@ -1,4 +1,5 @@
 import React from "react";
+import SortComponent from "../components/Others/SortComponent";
 import ProductListing from "../components/Products/ProductListing";
 import SidebarFilter from "../components/Sidebar/SidebarFilter";
 
@@ -10,8 +11,11 @@ const DaoraHadis = () => {
           <aside className="w-full p-4 lg:w-1/4">
             <SidebarFilter />
           </aside>
+
           <main className="w-full p-4 lg:w-3/4">
-            <div className="mb-8 text-2xl font-bold">মোট 456 টি পণ্য</div>
+            <div className="mb-4">
+              <SortComponent />
+            </div>
             <ProductListing />
           </main>
         </div>

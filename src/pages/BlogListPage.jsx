@@ -1,23 +1,8 @@
-// src/BlogListPage.js
-
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { blogs } from "../components/DummyData/DummyData"; // Importing dummy data
 
 const BlogListPage = () => {
-  const [blogs, setBlogs] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/blogs/")
-      .then((response) => {
-        setBlogs(response.data);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the blogs!", error);
-      });
-  }, []);
-
   return (
     <div className="flex min-h-screen flex-col">
       <div className="container mx-auto flex-grow px-5 py-10">

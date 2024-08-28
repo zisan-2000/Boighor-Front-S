@@ -5,9 +5,9 @@ import Slide from "./Slide";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-import bannerImage1 from "../../assets/banner.jpg";
-import bannerImage2 from "../../assets/banner01.jpg";
-import bannerImage3 from "../../assets/banner02.jpg";
+import bannerImage1 from "../../assets/others/banner.jpg";
+import bannerImage2 from "../../assets/others/banner01.jpg";
+import bannerImage3 from "../../assets/others/banner02.jpg";
 
 const Banner = () => {
   const settings = {

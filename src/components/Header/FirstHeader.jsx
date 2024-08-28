@@ -2,13 +2,13 @@ import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaSearch, FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../../assets/Adon-venture-Black.jpg";
+import logo from "../../assets/others/Adon-venture-Black.jpg";
 import SearchFirstHeader from "../SearchBox/SearchFirstHeader";
 import CartLink from "../cart/CartLink";
 
 const FirstHeader = ({ sidebarOpen, setSidebarOpen }) => {
   return (
-    <div className="header flex items-center justify-between bg-gray-800 p-4 text-white shadow-lg">
+    <div className="header sticky top-0 flex items-center justify-between bg-gray-800 p-4 text-white shadow-lg">
       <div className="flex items-center">
         <button
           className="mr-4 text-2xl lg:hidden"

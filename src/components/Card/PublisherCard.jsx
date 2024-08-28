@@ -34,7 +34,7 @@ const PublisherCard = ({ publisher }) => {
         <Link to={`/publisher/${publisher.id}`}>
           <Button className="buttonRed">সকল বই</Button>
         </Link>
-        <Button className="buttonGray">{publisher.books_count} টি বই</Button>
+        {/* <Button className="buttonGray">{publisher.books_count} টি বই</Button> */}
       </div>
 
       <div className="mt-4 text-center">
@@ -42,7 +42,7 @@ const PublisherCard = ({ publisher }) => {
           to={`/publisher/${publisher.id}/about`}
           className="text-blue-500 hover:underline"
         >
-          আরো জানুন
+          আরো জানুন (Pending)
         </Link>
       </div>
     </div>

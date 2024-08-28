@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
-import AuthorFilter from "./SidebarAuthorFilter";
+import React from "react";
+import { categories } from "../DummyData/DummyData"; // Importing dummy data
 
-const SidebarFilter = () => {
-  const [publishers, setPublishers] = useState([]);
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/publishers/")
-      .then((response) => response.json())
-      .then((data) => setPublishers(data))
-      .catch((error) => console.error("Error fetching publishers:", error));
-  }, []);
+const SidebarFilter = ({ selectedCategories, onCategoryChange }) => {
+  const handleCheckboxChange = (categoryId) => {
+    onCategoryChange(categoryId);
+  };
 
   return (
     <div className="bgThemeColor p-4">
@@ -17,23 +12,27 @@ const SidebarFilter = () => {
         <h2 className="mb-3 text-lg font-bold text-gray-700">অনুসন্ধান</h2>
 
         <div>
-          <h3 className="mb-2 text-sm font-semibold text-gray-600">প্রকাশক:</h3>
+          <h3 className="mb-2 text-sm font-semibold text-gray-600">বিষয়:</h3>
           <div className="mb-4 h-48 overflow-y-auto rounded-lg border border-gray-200 p-2">
-            {publishers.length > 0 ? (
-              publishers.map((publisher) => (
+            {categories.length > 0 ? (
+              categories.map((category) => (
                 <label
                   className="mb-1 block flex items-center text-sm text-gray-700"
-                  key={publisher.id}
+                  key={category.id}
                 >
-                  <input type="checkbox" className="mr-2" />
-                  {publisher.name}
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                    checked={selectedCategories.includes(category.id)}
+                    onChange={() => handleCheckboxChange(category.id)}
+                  />
+                  {category.name}
                 </label>
               ))
             ) : (
-              <p>Loading publishers...</p>
+              <p>No categories available.</p>
             )}
           </div>
-          <AuthorFilter />
         </div>
       </div>
     </div>

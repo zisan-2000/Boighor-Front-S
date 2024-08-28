@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 
 const CartButtonContainer = () => {
   return (
-    <div className="flex justify-between rounded bg-gray-100 p-4">
+    <div className="flex justify-between space-x-2 rounded bg-gray-100 p-4">
       <Button to="/book-fair" className="bg-green-500 hover:bg-green-600">
         <FaShoppingCart className="mr-2 h-5 w-5" />
         আরও কেনাকাটা করুন
