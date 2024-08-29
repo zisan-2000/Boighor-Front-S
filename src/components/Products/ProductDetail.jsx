@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaFilePdf } from "react-icons/fa"; // Importing PDF icon
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify"; // Importing Toast
+import "react-toastify/dist/ReactToastify.css"; // Importing Toast CSS
 import { useCart } from "../../contexts/CartContext";
 import Button from "../Button/Button";
 import {
@@ -28,6 +30,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     addToCart(product);
+    toast.success("সফলভাবে কার্টে যুক্ত হয়েছে");
   };
 
   const handleImageClick = () => {
@@ -103,9 +106,9 @@ const ProductDetail = () => {
               <p>
                 <strong>প্রকাশনী:</strong> {publisher.name}
               </p>
-              <p>
+              {/* <p>
                 <strong>পৃষ্ঠা সংখ্যা:</strong> 160
-              </p>
+              </p> */}
               <p>
                 <strong>ভাষা:</strong> Bangla
               </p>
@@ -122,6 +125,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+      <ToastContainer /> {/* Toast container to show toasts */}
     </div>
   );
 };

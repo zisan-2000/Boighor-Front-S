@@ -90,16 +90,19 @@ const Header = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-50 w-1/2 transform  bg-blue-600 p-8 text-white transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 left-0 z-50 w-64 transform bg-gradient-to-b from-blue-600 to-indigo-800 p-8 text-white transition-transform duration-300 ease-in-out ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:hidden`}
       >
-        <button
-          className="self-end text-2xl"
-          onClick={() => setSidebarOpen(false)}
-        >
-          <AiOutlineClose />
-        </button>
+        <div className="mb-8 flex items-center justify-between">
+          <h2 className="text-2xl font-semibold">Menu</h2>
+          <button
+            className="text-3xl focus:outline-none"
+            onClick={() => setSidebarOpen(false)}
+          >
+            <AiOutlineClose />
+          </button>
+        </div>
 
         <nav className="mt-8 flex flex-col space-y-4">
           <NavLink
@@ -107,122 +110,104 @@ const Header = () => {
             exact
             className={({ isActive }) =>
               isActive
-                ? "flex items-center gap-2 text-red-500"
-                : "flex items-center gap-2"
+                ? "flex items-center gap-3 rounded-md bg-indigo-700 p-2 text-white shadow-md"
+                : "flex items-center gap-3 p-2 transition duration-200 hover:rounded-md hover:bg-indigo-700"
             }
             onClick={() => setSidebarOpen(false)}
           >
-            <AiFillHome className="mr-2" />
-            হোম
+            <AiFillHome className="text-xl" />
+            <span className="font-medium">হোম</span>
           </NavLink>
 
           <NavLink
             to="/allbooks"
             className={({ isActive }) =>
               isActive
-                ? "flex items-center gap-2 text-red-500"
-                : "flex items-center gap-2"
+                ? "flex items-center gap-3 rounded-md bg-indigo-700 p-2 text-white shadow-md"
+                : "flex items-center gap-3 p-2 transition duration-200 hover:rounded-md hover:bg-indigo-700"
             }
             onClick={() => setSidebarOpen(false)}
           >
-            <FaBookOpen className="mr-2" />
-            সকল বইসমূহ
+            <FaBookOpen className="text-xl" />
+            <span className="font-medium">সকল বইসমূহ</span>
           </NavLink>
 
           <NavLink
             to="/category"
             className={({ isActive }) =>
               isActive
-                ? "flex items-center gap-2 text-red-500"
-                : "flex items-center gap-2"
+                ? "flex items-center gap-3 rounded-md bg-indigo-700 p-2 text-white shadow-md"
+                : "flex items-center gap-3 p-2 transition duration-200 hover:rounded-md hover:bg-indigo-700"
             }
             onClick={() => setSidebarOpen(false)}
           >
-            <AiOutlineUnorderedList className="mr-2" />
-            বিষয়সমূহ
+            <AiOutlineUnorderedList className="text-xl" />
+            <span className="font-medium">বিষয়সমূহ</span>
           </NavLink>
 
           <NavLink
             to="/authors"
             className={({ isActive }) =>
               isActive
-                ? "flex items-center gap-2 text-red-500"
-                : "flex items-center gap-2"
+                ? "flex items-center gap-3 rounded-md bg-indigo-700 p-2 text-white shadow-md"
+                : "flex items-center gap-3 p-2 transition duration-200 hover:rounded-md hover:bg-indigo-700"
             }
             onClick={() => setSidebarOpen(false)}
           >
-            <FaPenNib className="mr-2" />
-            লেখক
+            <FaPenNib className="text-xl" />
+            <span className="font-medium">লেখক</span>
           </NavLink>
 
           <NavLink
             to="/publishers"
             className={({ isActive }) =>
               isActive
-                ? "flex items-center gap-2 text-red-500"
-                : "flex items-center gap-2"
+                ? "flex items-center gap-3 rounded-md bg-indigo-700 p-2 text-white shadow-md"
+                : "flex items-center gap-3 p-2 transition duration-200 hover:rounded-md hover:bg-indigo-700"
             }
             onClick={() => setSidebarOpen(false)}
           >
-            <FaBookOpen className="mr-2" />
-            প্রকাশক
+            <FaBookOpen className="text-xl" />
+            <span className="font-medium">প্রকাশক</span>
           </NavLink>
 
           <NavLink
             to="/book-fair"
             className={({ isActive }) =>
               isActive
-                ? "flex items-center gap-2 text-red-500"
-                : "flex items-center gap-2"
+                ? "flex items-center gap-3 rounded-md bg-indigo-700 p-2 text-white shadow-md"
+                : "flex items-center gap-3 p-2 transition duration-200 hover:rounded-md hover:bg-indigo-700"
             }
             onClick={() => setSidebarOpen(false)}
           >
-            <MdEvent className="mr-2" />
-            বইমেলা 2024
+            <MdEvent className="text-xl" />
+            <span className="font-medium">বইমেলা 2024</span>
           </NavLink>
-
-          {/* <Link
-            to="/pre-order"
-            className="menuHeader flex items-center rounded-md p-2 transition duration-200 hover:bg-gray-700"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <MdShoppingCart className="mr-2" />
-            প্রি-অর্ডার
-          </Link>
-
-          <Link
-            to="/islamic-products"
-            className="menuHeader flex items-center rounded-md p-2 transition duration-200 hover:bg-gray-700"
-            onClick={() => setSidebarOpen(false)}
-          >
-            <MdLocalGroceryStore className="mr-2" />
-            ইসলামিক পণ্য
-          </Link> */}
 
           <NavLink
             to="/blogList"
             className={({ isActive }) =>
               isActive
-                ? "flex items-center gap-2 text-red-500"
-                : "flex items-center gap-2"
+                ? "flex items-center gap-3 rounded-md bg-indigo-700 p-2 text-white shadow-md"
+                : "flex items-center gap-3 p-2 transition duration-200 hover:rounded-md hover:bg-indigo-700"
             }
             onClick={() => setSidebarOpen(false)}
           >
-            <FaBlog className="mr-2" />
-            ব্লগসমুহ
+            <FaBlog className="text-xl" />
+            <span className="font-medium">ব্লগসমুহ</span>
           </NavLink>
 
           <NavLink
             to="/contact"
             className={({ isActive }) =>
               isActive
-                ? "flex items-center gap-2 text-red-500"
-                : "flex items-center gap-2"
+                ? "flex items-center gap-3 rounded-md bg-indigo-700 p-2 text-white shadow-md"
+                : "flex items-center gap-3 p-2 transition duration-200 hover:rounded-md hover:bg-indigo-700"
             }
             onClick={() => setSidebarOpen(false)}
           >
-            <MdContactMail className="mr-2" />
-            যোগাযোগ
+            <MdContactMail className="text-xl" />
+            <span className="font-medium">যোগাযোগ</span>
           </NavLink>
         </nav>
       </div>

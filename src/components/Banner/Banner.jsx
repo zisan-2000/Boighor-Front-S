@@ -33,12 +33,12 @@ const Banner = () => {
       buttons: [
         {
           text: "এখনই কিনুন",
-          link: "islamic-products",
+          link: "book-fair",
           style: "bg-orange-500 hover:bg-orange-600",
         },
         {
           text: "আরও জানুন",
-          link: "/",
+          link: "allbooks",
           style: "bg-green-500 hover:bg-gray-200 text-black",
         },
       ],
@@ -52,13 +52,8 @@ const Banner = () => {
       buttons: [
         {
           text: "সংগ্রহগুলি ব্রাউজ করুন",
-          link: "category",
+          link: "allbooks",
           style: "bg-orange-500 hover:bg-orange-600",
-        },
-        {
-          text: "আমাদের সম্প্রদায়ে যোগ দিন",
-          link: "blogList",
-          style: "bg-green-500 hover:bg-gray-200 text-black",
         },
       ],
     },
@@ -70,13 +65,8 @@ const Banner = () => {
         "আমাদের বিস্তৃত ক্যাটালগ এমন বই অফার করে যা প্রতিটি স্বাদের জন্য উপযুক্ত। আপনি থ্রিলার, রোম্যান্স, বা স্ব-উন্নতি মধ্যে থাকুন না কেন, বার্ডস অফ ইডেন আপনার জন্য নিখুঁত বই রয়েছে।",
       buttons: [
         {
-          text: "আরো আবিষ্কার কর",
-          link: "#discover",
-          style: "bg-orange-500 hover:bg-orange-600",
-        },
-        {
           text: "যোগাযোগ করুন",
-          link: "#contact",
+          link: "contact",
           style: "bg-green-500 hover:bg-gray-200 text-black",
         },
       ],
@@ -84,7 +74,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="relative min-h-screen w-full sm:h-[70vh] md:h-[80vh] lg:h-[90vh] xl:h-[100vh]">
+    <div className="relative min-h-screen w-auto sm:h-[70vh] md:h-[80vh] lg:h-[90vh] xl:h-[100vh]">
       <Slider {...settings} className="h-full">
         {slides.map((slide, index) => (
           <Slide key={index} slide={slide} />

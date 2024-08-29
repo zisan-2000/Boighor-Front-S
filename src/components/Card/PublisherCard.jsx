@@ -31,9 +31,10 @@ const PublisherCard = ({ publisher }) => {
       </p>
 
       <div className="mt-4 flex justify-center space-x-4">
-        <Link to={`/publisher/${publisher.id}`}>
-          <Button className="buttonRed">সকল বই</Button>
-        </Link>
+        <Button to="/allbooks" className="buttonRed">
+          সকল বই
+        </Button>
+
         {/* <Button className="buttonGray">{publisher.books_count} টি বই</Button> */}
       </div>
 

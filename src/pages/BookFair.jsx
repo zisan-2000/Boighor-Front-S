@@ -5,6 +5,9 @@ import SortComponent from "../components/Others/SortComponent";
 import ProductListing from "../components/Products/ProductListing";
 import SidebarFilter from "../components/Sidebar/SidebarFilter";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const BookFair = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
@@ -25,24 +28,20 @@ const BookFair = () => {
   return (
     <div className="bgMain py-8">
       <div className="mx-auto max-w-7xl p-4">
-        <div className="">
-          <Header4 />
-        </div>
-        <div className="flex flex-row ">
-          <aside className="w-2/4 p-4 sm:w-2/4 md:w-2/4 lg:w-1/4  2xl:w-[600px]">
+        <Header4 />
+        <div className="flex flex-col md:flex-row">
+          <aside className="w-full p-2 md:w-1/3 lg:w-1/4 ">
             <SidebarFilter
               selectedCategories={selectedCategories}
               onCategoryChange={handleCategoryChange}
             />
           </aside>
-          <main className="w-full p-4 lg:w-3/4 xl:w-3/4 2xl:w-auto">
-            <div className="mb-4">
-              <SortComponent productCount={filteredProducts.length} />
-            </div>
-
+          <main className="w-full p-2 md:w-2/3 lg:w-3/4">
+            <SortComponent productCount={filteredProducts.length} />
             <ProductListing products={filteredProducts} />
           </main>
         </div>
+        <ToastContainer />
       </div>
     </div>
   );

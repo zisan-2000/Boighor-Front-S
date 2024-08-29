@@ -1,5 +1,7 @@
 // src/components/ProductCard.jsx
 import React from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useCart } from "../../contexts/CartContext";
 import Button from "../Button/Button";
 
@@ -8,6 +10,7 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = () => {
     addToCart(product);
+    toast.success("সফলভাবে কার্ট এ যুক্ত হয়েছে!");
   };
 
   return (

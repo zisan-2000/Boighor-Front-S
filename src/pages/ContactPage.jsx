@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -7,7 +9,6 @@ const ContactForm = () => {
     phone_number: "",
     message: "",
   });
-  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,7 +19,9 @@ const ContactForm = () => {
     e.preventDefault();
     // Simulate a successful form submission
     setTimeout(() => {
-      setStatus("Message sent successfully!");
+      toast.success("Message sent successfully!", {
+        position: "top-center",
+      });
       setFormData({
         name: "",
         email: "",
@@ -29,7 +32,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="m-8 mx-auto max-w-md rounded-lg border border-gray-300 p-16 shadow-md dark:bg-slate-200">
+    <div className="m-8 mx-auto max-w-md rounded-lg border border-gray-300 p-8 shadow-md dark:bg-slate-200">
+      <ToastContainer />
       <h1 className="mb-4 text-2xl font-bold">Contact Us</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -106,9 +110,6 @@ const ContactForm = () => {
           Send Message
         </button>
       </form>
-      {status && (
-        <p className="mt-4 text-center text-sm font-medium">{status}</p>
-      )}
     </div>
   );
 };

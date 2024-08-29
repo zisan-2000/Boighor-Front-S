@@ -1,4 +1,3 @@
-// PaymentMethods.jsx
 import React, { useState } from "react";
 import {
   FaCcVisa,
@@ -6,24 +5,38 @@ import {
   FaStepBackward,
   FaStepForward,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
-import { useCart } from "../../contexts/CartContext";
+import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { orders, products } from "../../components/DummyData/DummyData"; // Import dummy data
 import Button from "../Button/Button";
 
-const PaymentMethods = ({ formData, totalPrice, shippingCost, finalTotal }) => {
+const PaymentMethods = ({ formData }) => {
   const [paymentMethod, setPaymentMethod] = useState("");
-  const navigate = useNavigate(); // Initialize navigate
-  const { cart } = useCart(); // Get cart items from the cart context
+  const navigate = useNavigate();
+
+  // Static data from the first order in the dummy data
+  const order = orders[0];
+  const totalPrice = order.total;
+  const shippingCost = order.shipping_cost;
+  const finalTotal = order.grand_total;
 
   const handlePaymentChange = (e) => {
     setPaymentMethod(e.target.value);
   };
 
-  const handleSubmit = async () => {
-    const products = cart.items.map((item) => ({
-      product_id: item.id,
-      quantity: item.quantity,
-    }));
+  const handleSubmit = () => {
+    // Validation checks
+    const { name, email, phoneNumber, addressDetails } = formData;
+    if (!name || !email || !phoneNumber || !addressDetails) {
+      toast.error("Please fill out all required fields.");
+      return;
+    }
+
+    if (!paymentMethod) {
+      toast.error("Please select a payment method.");
+      return;
+    }
 
     const data = {
       name: formData.name,
@@ -38,38 +51,24 @@ const PaymentMethods = ({ formData, totalPrice, shippingCost, finalTotal }) => {
       shipping_cost: parseFloat(shippingCost),
       grand_total: parseFloat(finalTotal),
       payment_method: paymentMethod,
-      products: products,
+      products: products.map((product) => ({
+        product_id: product.id,
+        quantity: 1, // Assuming 1 quantity for simplicity
+      })),
     };
 
-    try {
-      const response = await fetch("http://127.0.0.1:8000/orders/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    console.log("Order Data:", data);
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(
-          `Network response was not ok: ${response.status} - ${errorText}`,
-        );
-      }
-
-      const result = await response.json();
-      console.log("Order submitted successfully:", result);
-
-      // Redirect to order confirmation page with result
-      navigate("/order-confirmation", { state: { order: result } });
-    } catch (error) {
-      console.error("There was a problem with the fetch operation:", error);
-    }
+    // Simulate submission and redirect to order confirmation
+    setTimeout(() => {
+      navigate("/order-confirmation", { state: { order: data } });
+    }, 1000);
   };
 
   return (
-    <div className="rounded-md bg-white p-6 shadow-md">
-      <h2 className="mb-4 text-xl font-semibold">
+    <div className="rounded-md bg-white p-4 shadow-md sm:p-6 lg:p-8">
+      <ToastContainer />
+      <h2 className="mb-4 text-lg font-semibold sm:text-xl">
         পেমেন্ট মেথড (Payment Methods)
       </h2>
       <div className="mb-4">
@@ -110,8 +109,8 @@ const PaymentMethods = ({ formData, totalPrice, shippingCost, finalTotal }) => {
           <span>Rocket</span>
         </label>
       </div>
-      <div className="mt-4 flex justify-between">
-        <Button className="buttonRed mr-[350px]" to="/cart">
+      <div className="mt-4 flex flex-col justify-between sm:flex-row">
+        <Button className="buttonRed mb-4 sm:mb-0 sm:mr-4" to="/cart">
           <FaStepBackward className="mr-2" />
           কার্টে ফেরত যান
         </Button>

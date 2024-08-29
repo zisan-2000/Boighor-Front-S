@@ -30,7 +30,10 @@ const AuthorCard = ({ author }) => {
       </div>
       <div className="mt-6 flex justify-center space-x-4">
         <Link to={`/author/${author.id}`}>
-          <Button className="buttonRed transition duration-300 hover:bg-red-600">
+          <Button
+            to="/allbooks"
+            className="buttonRed transition duration-300 hover:bg-red-600"
+          >
             সকল বই
           </Button>
         </Link>
